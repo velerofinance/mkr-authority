@@ -29,11 +29,11 @@ interface GemLike {
 }
 
 /*
-   This thing creates gems on demand in return for dai.
+   This thing creates gems on demand in return for usdv.
 
  - `lot` gems for sale
- - `bid` dai paid
- - `gal` receives dai income
+ - `bid` usdv paid
+ - `gal` receives usdv income
  - `ttl` single bid lifetime
  - `beg` minimum bid increase
  - `end` max auction duration

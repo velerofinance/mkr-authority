@@ -17,15 +17,15 @@ pragma solidity >=0.5.12;
 
 import "ds-test/test.sol";
 
-import "./MkrAuthority.sol";
+import "./VdgtAuthority.sol";
 
 contract DSAuthority {
   function canCall(address src, address dst, bytes4 sig) public view returns (bool) {}
 }
 
 contract Tester {
-  MkrAuthority authority;
-  constructor(MkrAuthority authority_) public { authority = authority_; }
+  VdgtAuthority authority;
+  constructor(VdgtAuthority authority_) public { authority = authority_; }
   function setRoot(address usr) public { authority.setRoot(usr); }
   function rely(address usr) public { authority.rely(usr); }
   function deny(address usr) public { authority.deny(usr); }
@@ -41,12 +41,12 @@ contract Tester {
   function notMintOrBurn() auth public {}
 }
 
-contract MkrAuthorityTest is DSTest {
-  MkrAuthority authority;
+contract VdgtAuthorityTest is DSTest {
+  VdgtAuthority authority;
   Tester tester;
 
   function setUp() public {
-    authority = new MkrAuthority();
+    authority = new VdgtAuthority();
     tester = new Tester(authority);
   }
 
